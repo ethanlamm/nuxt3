@@ -1,7 +1,11 @@
 <template>
 	<div>
 		<h2>App Header</h2>
-		<div>在 <b>components/</b> 可以使用：<SpecialButton /></div>
+		<ul>
+			<li><NuxtLink to="/">Home</NuxtLink></li>
+			<li><NuxtLink to="/about">About</NuxtLink></li>
+			<li><NuxtLink to="/parent">Parent</NuxtLink></li>
+		</ul>
 	</div>
 </template>
 

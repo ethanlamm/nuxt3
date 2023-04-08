@@ -67,3 +67,10 @@ tsconfig.json：ts配置文件
 >
 > 3）Layouts are placed in the `layouts/` directory and will be automatically loaded via asynchronous import when used. Layouts are used by adding `<NuxtLayout>` to your `app.vue`—— **layout 和 app.vue 一起使用**
 
+
+
+七、导航（跳转）
+
+[`<NuxtLink>`](https://nuxt.com/docs/api/components/nuxt-link)
+
+[navigateTo](https://nuxt.com/docs/api/utils/navigate-to)

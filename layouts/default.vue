@@ -1,11 +1,17 @@
 <template>
 	<div>
 		<Header />
-		<slot />
+		<div class="slot">
+			<slot />
+		</div>
 		<Footer />
 	</div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+	.slot {
+		padding: 30px;
+	}
+</style>

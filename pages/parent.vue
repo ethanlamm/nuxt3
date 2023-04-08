@@ -1,7 +1,12 @@
 <template>
 	<div>
 		<h3>Parent Page Layout</h3>
-		<NuxtPage />
+		<NuxtLink to="/parent/child">Specific Child</NuxtLink>
+		<NuxtLink to="/parent/child1">Dynamic Child</NuxtLink>
+		<NuxtLink to="/parent?a=111">Query Params</NuxtLink>
+		<div class="children">
+			<NuxtPage />
+		</div>
 		<hr />
 		<div>
 			<h4>嵌套路由</h4>
@@ -32,4 +37,11 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+	a {
+		margin: 0 10px;
+	}
+	.children {
+		padding: 20px;
+	}
+</style>
