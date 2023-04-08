@@ -51,3 +51,8 @@ tsconfig.json：ts配置文件
 
 [Custom routing](https://nuxt.com/docs/guide/going-further/custom-routing#router-options)
 
+
+
+五、[Components Directory](https://nuxt.com/docs/guide/directory-structure/components)
+
+> 全局组件
