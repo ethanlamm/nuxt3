@@ -38,3 +38,16 @@ tsconfig.json：ts配置文件
 实际：`<NuxtPage>` 相当于 `<RouterView>` ，在 `app.vue` 中当作路由出口 或者 嵌套路由的出口
 
 在 `app.vue` 中使用 `<NuxtPage>`，则需要在 `pages` 目录下新建对应路由的组件：`index.vue` => '/'；`about.vue` => '/about'
+
+
+
+四、[Pages Directory](https://nuxt.com/docs/guide/directory-structure/pages)
+
+> In Nuxt3, `pages/` directory is **optional**, meaning that `vue-router` won;t be included if you **only use** `app.vue`, reducing your application's bundle size.
+
+
+
+[Page Metadata](https://nuxt.com/docs/guide/directory-structure/pages#page-metadata)
+
+[Custom routing](https://nuxt.com/docs/guide/going-further/custom-routing#router-options)
+
