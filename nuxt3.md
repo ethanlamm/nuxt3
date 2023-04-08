@@ -56,3 +56,14 @@ tsconfig.json：ts配置文件
 五、[Components Directory](https://nuxt.com/docs/guide/directory-structure/components)
 
 > 全局组件
+
+
+
+六、[Layouts Directory](https://nuxt.com/docs/guide/directory-structure/layouts)
+
+> 1）layouts must have a single root element to allow Nuxt to apply transitions between layout changes - and this root element cannot be a `<slot />`.
+>
+> 2）If you only have a single layout in your application, we **recommend** using app.vue with the `<NuxtPage>` instead.
+>
+> 3）Layouts are placed in the `layouts/` directory and will be automatically loaded via asynchronous import when used. Layouts are used by adding `<NuxtLayout>` to your `app.vue`—— **layout 和 app.vue 一起使用**
+
