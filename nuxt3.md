@@ -74,3 +74,39 @@ tsconfig.json：ts配置文件
 [`<NuxtLink>`](https://nuxt.com/docs/api/components/nuxt-link)
 
 [navigateTo](https://nuxt.com/docs/api/utils/navigate-to)
+
+
+
+八、[SEO and Meta](https://nuxt.com/docs/getting-started/seo-meta)
+
+- [Meta](https://nuxt.com/docs/getting-started/seo-meta#defaults)
+
+- [Page Metadata](https://nuxt.com/docs/guide/directory-structure/pages/#page-metadata) -- [definePageMeta](https://nuxt.com/docs/api/utils/define-page-meta)
+
+> 1）[Meta Type(SEO)](https://nuxt.com/docs/api/composables/use-head#type)：title、titleTemplate、link、meta、style、script...（字段是固定的，**不能自定义**）
+>
+> 2）[definePageMeta Type](https://nuxt.com/docs/api/utils/define-page-meta#type)：validate、redirect、alias、key、keepalive、layout、key-value（除了一些固定字段外，**可以自定义**）
+
+
+
+1. Meta
+
+```
+// 默认已设置
+1）charset：utf-8
+2）viewport: width=device-width, initial-scale=1
+```
+
+- `nuxt.config.ts`：[`app.head`](https://nuxt.com/docs/api/configuration/nuxt-config#head)（不能使用响应式数据）
+- [`useHead`](https://nuxt.com/docs/api/composables/use-head)：可使用响应式数据（[参考](https://nuxt.com/docs/getting-started/seo-meta#usehead)）
+- [Components](https://nuxt.com/docs/getting-started/seo-meta#components)
+
+
+
+2. PageMeta
+
+> `definePageMeta` is a compiler macro that you can use to set metadata for your **page components** located in the `pages/` directory .
+>
+> This way you can set **custom metadata** for each static or dynamic route of your Nuxt application.
+
+针对当前页面(路由)，可设置一些自定义属性值，根据该值来进行一些操作
