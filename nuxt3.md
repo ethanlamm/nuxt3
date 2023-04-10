@@ -110,3 +110,13 @@ tsconfig.json：ts配置文件
 > This way you can set **custom metadata** for each static or dynamic route of your Nuxt application.
 
 针对当前页面(路由)，可设置一些自定义属性值，根据该值来进行一些操作
+
+
+
+九、[Assets](https://nuxt.com/docs/getting-started/assets)
+
+```
+public目录：以 '/' 形式访问，不会被打包工具处理
+assets目录：以 '~/assets/' 形式访问，会被打包工具处理
+```
+
