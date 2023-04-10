@@ -8,5 +8,11 @@ export default defineNuxtConfig({
 				{ src: "https://awesome-lib.js" }
 			]
 		}
+	},
+	runtimeConfig: {
+		apiKey: "xxx-xxx",
+		public: {
+			theme: "dark"
+		}
 	}
 })

@@ -120,3 +120,13 @@ public目录：以 '/' 形式访问，不会被打包工具处理
 assets目录：以 '~/assets/' 形式访问，会被打包工具处理
 ```
 
+
+
+十、[Configuration](https://nuxt.com/docs/getting-started/configuration)
+
+> The `nuxt.config.ts` file is located at the root of a Nuxt project and can override or extend the application's behavior.
+>
+> The [`runtimeconfig`](https://nuxt.com/docs/api/configuration/nuxt-config#runtimeconfig) API exposes values like environment variables to the rest of your application. By default, these keys are **only available server-side**. The keys within **`runtimeConfig.public`** are **also available client-side**.
+>
+> Those values defined in `nuxt.config` can be **overridden** using environment variables.
+
