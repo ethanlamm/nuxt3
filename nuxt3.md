@@ -130,3 +130,30 @@ assets目录：以 '~/assets/' 形式访问，会被打包工具处理
 >
 > Those values defined in `nuxt.config` can be **overridden** using environment variables.
 
+
+
+十一、[Data Fetching](https://nuxt.com/docs/getting-started/data-fetching)
+
+> `useFetch`, `useLazyFetch`, `useAsyncData` and `useLazyAsyncData` only work during `setup` or `Lifecycle Hooks`
+
+- [useFetch](https://nuxt.com/docs/api/composables/use-fetch)：This composable provides a convenient wrapper around `useAsyncData` and `$fetch`—— shortcut of useAsyncData + $fetch.
+- [useLazyFetch](https://nuxt.com/docs/api/composables/use-lazy-fetch)：`useLazyFetch` provides a wrapper around `useFetch` that triggers navigation before the handler is resolved by setting the `lazy` option to `true`.
+- [useAsyncData](https://nuxt.com/docs/api/composables/use-async-data)：use `useAsyncData` to get access to data that resolves asynchronously.
+- [useLazyAsyncData](https://nuxt.com/docs/api/composables/use-lazy-async-data)：`useLazyAsyncData` provides a wrapper around `useAsyncData` that triggers navigation before the handler is resolved by setting the `lazy` option to `true`.
+
+> By default, `useFetch` and `useAsyncData` **blocks navigation** until its async handler is resolved.
+>
+> But `useLazyFetch` and `useLazyAsyncData` would not. However, this means you need to handle the situation where the data is `null` (or whatever value you have provided in a custom `default` factory function)
+
+
+
+- [$fetch](https://nuxt.com/docs/api/utils/dollarfetch)：Nuxt uses [ofetch](https://github.com/unjs/ofetch) to expose globally the `$fetch` helper for making HTTP requests within your Vue app or API routes.
+
+> 1）During server-side rendering, calling `$fetch` to fetch your internal [API routes](https://nuxt.com/docs/guide/directory-structure/server) will directly call the relevant function (emulating the request), **saving an additional API call**.
+>
+> 2）However, using `$fetch` in components without wrapping it with `useAsyncData` causes fetching the data twice: **initially on the server**, **then again on the client-side during hydration**, because `$fetch` does not transfer state from the server to the client. Thus, the fetch will be executed on both sides because the client has to get the data again.
+
+
+
+- [refreshNuxtData](https://nuxt.com/docs/api/utils/refresh-nuxt-data)
+- [clearNuxtData](https://nuxt.com/docs/api/utils/clear-nuxt-data)
