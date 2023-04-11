@@ -6,6 +6,7 @@
 			<li><NuxtLink to="/about">About</NuxtLink></li>
 			<li><NuxtLink to="/parent">Parent</NuxtLink></li>
 			<li><NuxtLink to="/data">Data Fetching</NuxtLink></li>
+			<li><NuxtLink to="/serverApi">Server API</NuxtLink></li>
 		</ul>
 	</div>
 </template>

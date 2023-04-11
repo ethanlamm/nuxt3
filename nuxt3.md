@@ -157,3 +157,17 @@ assets目录：以 '~/assets/' 形式访问，会被打包工具处理
 
 - [refreshNuxtData](https://nuxt.com/docs/api/utils/refresh-nuxt-data)
 - [clearNuxtData](https://nuxt.com/docs/api/utils/clear-nuxt-data)
+
+
+
+十二、[Server Directory](https://nuxt.com/docs/guide/directory-structure/server)
+
+> Nuxt automatically scans files inside the `~/server/api`, `~/server/routes`, and `~/server/middleware` directories to register API and server handlers with HMR support.
+>
+> Each file should export a default function defined with `defineEventHandler()`.
+>
+> The handler can directly return JSON data, a `Promise` or use `event.node.res.end()` to send response.
+
+
+
+[Server Utils--h3@1.6.4](https://www.jsdocs.io/package/h3#package-index)
