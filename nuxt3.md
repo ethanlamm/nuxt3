@@ -171,3 +171,28 @@ assets目录：以 '~/assets/' 形式访问，会被打包工具处理
 
 
 [Server Utils--h3@1.6.4](https://www.jsdocs.io/package/h3#package-index)
+
+
+
+十三、[State Management](https://nuxt.com/docs/getting-started/state-management)
+
+> Nuxt provides the `useState` composable to create a reactive and SSR-friendly shared state across components.
+>
+> [`useState`](https://nuxt.com/docs/api/composables/use-state) is an SSR-friendly [`ref`](https://vuejs.org/api/reactivity-core.html#ref) replacement. Its value will be preserved after server-side rendering (during client-side hydration) and shared across all components using a unique key.
+
+
+
+- [Using third-party libraries](https://nuxt.com/docs/getting-started/state-management#using-third-party-libraries)
+
+
+
+十四、[Composables Directory](https://nuxt.com/docs/guide/directory-structure/composables)
+
+> Nuxt 3 uses the `composables/` directory to **automatically import** your Vue composables into your application using [**auto-imports**](https://nuxt.com/docs/guide/concepts/auto-imports)!
+>
+> Under the hood, Nuxt auto generates the file **`.nuxt/imports.d.ts`** to declare the types.
+>
+> [Nuxt only scans files at the top level of the `composables/` director](https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned)
+
+
+
