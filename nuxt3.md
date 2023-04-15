@@ -209,3 +209,57 @@ assets目录：以 '~/assets/' 形式访问，会被打包工具处理
 十七、[Layers](https://nuxt.com/docs/getting-started/layers)
 
 > You can extend a layer by adding the [extends](https://nuxt.com/docs/api/configuration/nuxt-config#extends) property to the `nuxt.config.ts` file
+
+
+
+十八、[Rendering Modes](https://nuxt.com/docs/guide/concepts/rendering)
+
+> 1）[Frontend Rendering Development](https://zhuanlan.zhihu.com/p/406527954)
+>
+> 2）Nuxt supports both **client-side** and **universal** rendering
+
+
+
+1. **Traditional Server-Side Rendering**：JSP、PHP
+
+2. **[Client-Side Rendering](https://nuxt.com/docs/guide/concepts/rendering#client-side-only-rendering)**：a traditional Vue.js APP
+
+```
+ SaaS, back-office applications, online games
+```
+
+3. **[Universal Rendering](https://nuxt.com/docs/guide/concepts/rendering#universal-rendering)**：Nuxt APP(client-side + server-side)
+
+```
+blogs, marketing websites, portfolios, e-commerce sites, and marketplaces
+```
+
+By default, Nuxt uses **universal rendering** to provide better user experience and performance, and to optimize search engine indexing, but you can switch rendering modes in [one line of configuration](https://nuxt.com/docs/api/configuration/nuxt-config#ssr)
+
+4. **[New Rendering Patterns in Nuxt 3](https://nuxt.com/docs/guide/concepts/rendering#new-rendering-patterns-in-nuxt-3)**：
+- [Hybrid Rendering](https://nuxt.com/docs/guide/concepts/rendering#hybrid-rendering) along with [Route Rules](https://nuxt.com/docs/guide/concepts/rendering#route-rules)
+- [Edge Side  Rendering](https://nuxt.com/docs/guide/concepts/rendering#rendering-on-cdn-edge-workers)
+
+```ts
+export default defineNuxtConfig({
+  routeRules: {
+    // Static page generated on-demand, revalidates in background
+    '/blog/**': { swr: true },
+    // Static page generated on-demand once
+    '/articles/**': { static: true },
+    // Set custom headers matching paths
+    '/_nuxt/**': { headers: { 'cache-control': 's-maxage=0' } },
+    // Render these routes with SPA
+    '/admin/**': { ssr: false },
+    // Add cors headers
+    '/api/v1/**': { cors: true },
+    // Add redirect headers
+    '/old-page': { redirect: '/new-page' },
+    '/old-page2': { redirect: { to: '/new-page', statusCode: 302 } }
+  }
+})
+```
+
+> 1）[Stale-while-revalidate](https://zhuanlan.zhihu.com/p/108725722)
+>
+> 2）[SSR, SWR & Hybrid with Nuxt 3 - DEV Community](https://dev.to/guillaumeduhan/ssr-swr-hybrid-with-nuxt-3-18b7)
