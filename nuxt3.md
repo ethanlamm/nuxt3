@@ -196,3 +196,16 @@ assets目录：以 '~/assets/' 形式访问，会被打包工具处理
 
 
 
+十五、[Transitions](https://nuxt.com/docs/getting-started/transitions)
+
+> Nuxt leverages Vue's [`<Transition>`](https://vuejs.org/guide/built-ins/transition.html#the-transition-component) component to apply transitions between pages and layouts
+
+
+
+十六、[Error handling](https://nuxt.com/docs/getting-started/error-handling)
+
+
+
+十七、[Layers](https://nuxt.com/docs/getting-started/layers)
+
+> You can extend a layer by adding the [extends](https://nuxt.com/docs/api/configuration/nuxt-config#extends) property to the `nuxt.config.ts` file
