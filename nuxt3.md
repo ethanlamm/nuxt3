@@ -55,7 +55,123 @@ tsconfig.json：ts配置文件
 
 五、[Components Directory](https://nuxt.com/docs/guide/directory-structure/components)
 
-> 全局组件
+> 全局组件目录
+
+1.[Dynamic Components](https://nuxt.com/docs/guide/directory-structure/components#dynamic-components)
+
+```vue
+<template>
+  <component :is="clickable ? MyButton : 'div'" />
+</template>
+
+<script setup>
+const MyButton = resolveComponent('MyButton')
+</script>
+```
+
+2.[Dynamic Imports](https://nuxt.com/docs/guide/directory-structure/components#dynamic-imports)：add the `Lazy` prefix to the component's name
+
+```vue
+<template>
+  <div>
+    <h1>Mountains</h1>
+    <LazyMountainsList v-if="show" />
+    <button v-if="!show" @click="show = true">Show List</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      show: false
+    }
+  }
+}
+</script>
+```
+
+3.[`<ClientOnly>` Component](https://nuxt.com/docs/guide/directory-structure/components#clientonly-component)
+
+```vue
+<template>
+  <div>
+    <Sidebar />
+    <ClientOnly>
+      <!-- this component will only be rendered on client-side -->
+      <Comments />
+    </ClientOnly>
+  </div>
+</template>
+```
+
+4.[.client Components](https://nuxt.com/docs/guide/directory-structure/components#client-components)
+
+```
+> | components/
+> --| Comments.client.vue
+```
+
+```vue
+<template>
+  <div>
+    <!-- this component will only be rendered on client side -->
+    <Comments />
+  </div>
+</template>
+```
+
+> 1）This feature only works with Nuxt auto-imports and `#components` imports. Explicitly importing these components from their real paths does not convert them into client-only components
+>
+> 2）`.client` components are rendered only after being mounted. To access the rendered template using `onMounted()`, add `await nextTick()` in the callback of the `onMounted()` hook
+
+5.[.server Components](https://nuxt.com/docs/guide/directory-structure/components#server-components)
+
+> 1）Server Side Rendering  !=  Server Components
+>
+> 2）Server Components' function is to disable the transmission of JavaScript to the browser
+>
+> 3）Suitable：don't need to be interactive、don't update much
+
+```ts
+// nuxt.config.ts 开启实验属性
+export default defineNuxtConfig({
+  experimental: {
+    componentIslands: true
+  }
+})
+```
+
+```
+> | components/
+> --| HighlightedMarkdown.server.vue
+```
+
+```vue
+<template>
+  <div>
+    <!--
+      this will automatically be rendered on the server, meaning your markdown parsing + highlighting
+      libraries are not included in your client bundle.
+     -->
+    <HighlightedMarkdown markdown="# Headline" />
+  </div>
+</template>
+```
+
+6.[`<DevOnly>` Component](https://nuxt.com/docs/guide/directory-structure/components#devonly-component)
+
+```vue
+<template>
+  <div>
+    <Sidebar />
+    <DevOnly>
+      <!-- this component will only be rendered during development -->
+      <LazyDebugBar />
+    </DevOnly>
+  </div>
+</template>
+```
 
 
 
@@ -225,13 +341,13 @@ assets目录：以 '~/assets/' 形式访问，会被打包工具处理
 2. **[Client-Side Rendering](https://nuxt.com/docs/guide/concepts/rendering#client-side-only-rendering)**：a traditional Vue.js APP
 
 ```
- SaaS, back-office applications, online games
+Suitable：SaaS, back-office applications, online games
 ```
 
 3. **[Universal Rendering](https://nuxt.com/docs/guide/concepts/rendering#universal-rendering)**：Nuxt APP(client-side + server-side)
 
 ```
-blogs, marketing websites, portfolios, e-commerce sites, and marketplaces
+Suitable：blogs, marketing websites, portfolios, e-commerce sites, and marketplaces
 ```
 
 By default, Nuxt uses **universal rendering** to provide better user experience and performance, and to optimize search engine indexing, but you can switch rendering modes in [one line of configuration](https://nuxt.com/docs/api/configuration/nuxt-config#ssr)
@@ -263,3 +379,4 @@ export default defineNuxtConfig({
 > 1）[Stale-while-revalidate](https://zhuanlan.zhihu.com/p/108725722)
 >
 > 2）[SSR, SWR & Hybrid with Nuxt 3 - DEV Community](https://dev.to/guillaumeduhan/ssr-swr-hybrid-with-nuxt-3-18b7)
+
