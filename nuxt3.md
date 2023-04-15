@@ -33,7 +33,7 @@ tsconfig.json：ts配置文件
 
 `NuxtPage` is a wrapper around `<RourerView>` component from Vue Route
 
-> [Since Nuxt 3 uses `<Suspense>` inside `<NuxtPage>`, it cannot be set as a root element.]([app.vue · Nuxt Directory Structure](https://nuxt.com/docs/guide/directory-structure/app#usage-with-pages))
+> [Since Nuxt 3 uses `<Suspense>` inside `<NuxtPage>`, it cannot be set as a root element.](https://nuxt.com/docs/guide/directory-structure/app#usage-with-pages)
 
 实际：`<NuxtPage>` 相当于 `<RouterView>` ，在 `app.vue` 中当作路由出口 或者 嵌套路由的出口
 
